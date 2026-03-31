@@ -112,15 +112,21 @@ This project demonstrates several core Java and software design principles:
 
 1. Navigate to the project root directory:
 
-   '''cd course-scheduler
+```bash
+cd course-scheduler
+```
 
 2. Compile the project:
 
-   '''mvn clean compile
+```bash
+mvn clean compile
+```
 
 3. Run the application:
 
-   '''mvn exec:java -Dexec.mainClass="com.vincematolka.coursescheduler.MainFrame"
+```bash
+mvn exec:java -Dexec.mainClass="com.vincematolka.coursescheduler.MainFrame"
+```
 
 ---
 

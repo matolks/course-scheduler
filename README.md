@@ -1,14 +1,6 @@
 # Course Scheduler
 
-A Java desktop application for managing semesters, students, courses, class enrollment, and waitlists using a local embedded SQL database.
-
----
-
-## Overview
-
-Course Scheduler is a Java Swing desktop application that allows administrators and students to manage course registration data across academic semesters.
-
-The application supports course enrollment, student scheduling, waitlist handling, and automatic promotion of waitlisted students when seats become available.
+A Java Swing desktop application for managing semesters, students, courses, enrollment, and waitlists using an embedded Apache Derby SQL database.
 
 ---
 
@@ -16,13 +8,9 @@ The application supports course enrollment, student scheduling, waitlist handlin
 
 ### Admin
 
-- Add semesters
-- Add students
-- Add courses
+- Add semesters, students, and courses
 - Add students to classes
-- View all students
-- View all courses for the current semester
-- View course rosters
+- View students, courses, and course rosters
 - Drop students from classes
 - Automatically promote the first waitlisted student when a seat opens
 
@@ -37,19 +25,17 @@ The application supports course enrollment, student scheduling, waitlist handlin
 
 ## Tech Stack
 
-- **Language:** Java
-- **GUI:** Java Swing
-- **Build Tool:** Maven
-- **Database:** Apache Derby embedded SQL database
-- **Database Access:** JDBC
+- Java
+- Java Swing
+- Maven
+- Apache Derby
+- JDBC
 
 ---
 
 ## Database
 
-This project uses **Apache Derby**, an embedded relational SQL database.
-
-Apache Derby runs locally inside the application, so no external database server is required. The database is automatically created and initialized when the application runs.
+This project uses Apache Derby as an embedded relational SQL database. The database runs locally inside the application and does not require an external server.
 
 ### Tables
 
@@ -60,12 +46,12 @@ Apache Derby runs locally inside the application, so no external database server
 
 ### Scheduling Logic
 
-Students are assigned one of two scheduling statuses:
+Students are assigned one of two statuses:
 
 - `"s"` — scheduled
 - `"w"` — waitlisted
 
-If a class is full, the student is placed on the waitlist. When a scheduled student drops the class, the earliest waitlisted student is automatically promoted into the open seat.
+If a class is full, the student is placed on the waitlist. When a scheduled student drops the class, the earliest waitlisted student is automatically promoted.
 
 ---
 
@@ -83,22 +69,7 @@ If a class is full, the student is placed on the waitlist. When a scheduled stud
 
 ---
 
-## Concepts Demonstrated
-
-- Object-oriented programming
-- Java Swing GUI development
-- Event-driven programming
-- JDBC database access
-- Embedded SQL database usage
-- Separation of concerns
-- Data modeling
-- Waitlist and enrollment state management
-
----
-
 ## How to Run
-
-### Using Maven
 
 1. Navigate to the project root directory:
 
@@ -117,18 +88,3 @@ mvn clean compile
 ```bash
 mvn exec:java -Dexec.mainClass="com.vincematolka.coursescheduler.MainFrame"
 ```
-
----
-
-## Notes
-
-- The application operates on a selected current semester.
-- Course and scheduling operations are scoped to the current semester.
-- The Apache Derby database is created automatically on first run.
-- No external database setup is required.
-
----
-
-## Author
-
-Vince Matolka

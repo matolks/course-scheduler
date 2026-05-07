@@ -25,11 +25,11 @@ A Java Swing desktop application for managing semesters, students, courses, enro
 
 ## Tech Stack
 
-- Java
-- Java Swing
-- Maven
-- Apache Derby
-- JDBC
+- **Language:** Java
+- **GUI:** Java Swing
+- **Build Tool:** Maven
+- **Database:** Apache Derby
+- **Database Access:** JDBC
 
 ---
 
